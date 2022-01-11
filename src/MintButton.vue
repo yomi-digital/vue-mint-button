@@ -1,8 +1,8 @@
 <template>
-  <div class="mint-btn">
-    <div v-if="account" style="color: #fff">
+  <div class="mint-wrapper">
+    <div v-if="account">
       You are minting with {{ account }}
-      <input type="number" v-model="amount" />
+      <input class="mint-amount" type="number" v-model="amount" />
       artifact<span v-if="amount > 1">s</span> paying {{ total }} ETH<br />
       <button v-if="!isMinting" @click="mint()">Mint Now</button>
       <span v-if="isMinting && !pending"
@@ -10,15 +10,19 @@
       >
       <span v-if="isMinting && pending"
         >Your transaction was submitted, waiting for confirmation at:
-        <a :href="'https://etherscan.io/tx/' + pending" target="_blank">{{
-          pending
-        }}</a>
+        <a
+          v-if="explorerUrl !== undefined"
+          :href="explorerUrl + pending"
+          target="_blank"
+          >{{ pending }}</a
+        >
+        <span v-if="explorerUrl === undefined">{{ pending }}</span>
       </span>
       <br />
       <span></span>
     </div>
     <div v-if="!account">
-      <button @click="connect()">Connect Wallet</button>
+      <button class="mint-btn" @click="connect()">Connect Wallet</button>
     </div>
   </div>
 </template>
@@ -29,7 +33,7 @@ import Web3Modal, { isMobile } from "web3modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 
 export default {
-  props: ["ABI", "price", "contract", "infuraId"],
+  props: ["ABI", "price", "contract", "infuraId", "explorerUrl"],
   name: "MintButton",
   data() {
     return {
