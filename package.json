@@ -1,10 +1,19 @@
 {
   "name": "vue-mint-button",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "VueJS component for web3 minting",
   "author": "YOMI",
-  "keywords": ["web3", "metamask", "ethereum", "vuejs"],
+  "keywords": [
+    "web3",
+    "metamask",
+    "ethereum",
+    "vuejs"
+  ],
   "license": "MIT",
+  "main": "./dist/vue-mint-button.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "webpack --config config/webpack.config.js",
