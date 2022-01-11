@@ -1,6 +1,6 @@
 {
   "name": "vue-mint-button",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "VueJS component for web3 minting",
   "author": "YOMI",
   "keywords": [
@@ -30,22 +30,9 @@
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
-    "babel-core": "^6.26.3",
     "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.2.3",
-    "babel-preset-env": "^1.7.0",
-    "cross-env": "^7.0.3",
-    "css-loader": "^6.5.1",
     "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.2.2",
-    "file-loader": "^6.2.0",
-    "node-sass": "^7.0.1",
-    "sass-loader": "^12.4.0",
-    "vue-loader": "^15.9.8",
-    "vue-template-compiler": "^2.6.14",
-    "webpack": "^5.65.0",
-    "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.7.2"
+    "eslint-plugin-vue": "^6.2.2"
   },
   "eslintConfig": {
     "root": true,
