@@ -51,7 +51,7 @@ export default {
   methods: {
     async connect() {
       const app = this;
-      let providerOptions; = {}
+      let providerOptions = {};
       if (app.infuraId !== undefined) {
         providerOptions = {
           walletconnect: {
