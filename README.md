@@ -7,9 +7,6 @@ https://yomi.digital
 
 This component has been developed to facilitate the connection to **Metamask**, the minting of **NFTs** and consequently the transaction. 
 
-You can see an online test demo at the following address: 
-https://turinglabsorg.github.io/universal-mint-button/
-
 ***ATTENTION***: *This component is only compatible with VueJS projects.*
 
 To use vue-mint-button, just follow this guide
