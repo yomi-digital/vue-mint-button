@@ -1,15 +1,25 @@
 <template>
   <div class="mint-wrapper">
-    <div v-if="account">
-      You are minting with {{ account }}
+    <div class="fadeIn" v-if="account">
+      <div>
+        <p>You are minting with:</p>
+        <h3>
+          {{ account }}
+        </h3>
+      </div>
+
       <input class="mint-amount" type="number" v-model="amount" />
-      artifact<span v-if="amount > 1">s</span> paying {{ total }} ETH<br />
-      <button v-if="!isMinting" @click="mint()">Mint Now</button>
-      <span v-if="isMinting && !pending"
-        >Please confirm the transaction in Metamask</span
-      >
-      <span v-if="isMinting && pending"
-        >Your transaction was submitted, waiting for confirmation at:
+      <p class="small">
+        NFT<span v-if="amount > 1">s</span> paying {{ total }} ETH<br />
+      </p>
+      <div class="btn mint-btn m-top-1" v-if="!isMinting" @click="mint()">
+        Mint Now
+      </div>
+      <p class="m-top-1" v-if="isMinting && !pending">
+        Please confirm the transaction in Metamask
+      </p>
+      <p class="m-top-1" v-if="isMinting && pending">
+        Your transaction was submitted, waiting for confirmation at:
         <a
           v-if="explorerUrl !== undefined"
           :href="explorerUrl + pending"
@@ -17,12 +27,10 @@
           >{{ pending }}</a
         >
         <span v-if="explorerUrl === undefined">{{ pending }}</span>
-      </span>
-      <br />
-      <span></span>
+      </p>
     </div>
     <div v-if="!account">
-      <button class="mint-btn" @click="connect()">Connect Wallet</button>
+      <div class="btn mint-btn" @click="connect()">Connect Wallet</div>
     </div>
   </div>
 </template>
@@ -31,6 +39,7 @@
 import Web3 from "web3";
 import Web3Modal, { isMobile } from "web3modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
+import "@/mint-btn-style.css";
 
 export default {
   props: ["ABI", "price", "contract", "infuraId", "explorerUrl"],
@@ -49,6 +58,12 @@ export default {
   watch: {
     amount() {
       const app = this;
+      if (app.amount > 5) {
+        app.amount = 5;
+      }
+      if (app.amount <= 0) {
+        app.amount = 1;
+      }
       app.total = (app.price * app.amount).toFixed(3);
     },
   },
