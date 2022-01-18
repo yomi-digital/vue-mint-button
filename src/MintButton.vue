@@ -135,3 +135,85 @@ export default {
   },
 };
 </script>
+
+<style>
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #050505;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid #050505;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #050505;
+  color: #ffffff;
+}
+
+.fadeIn {
+  -webkit-animation: fadeIn 2.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fadeIn 2.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+input {
+  font-size: 1.5rem;
+  border-radius: 5px;
+  margin: 5px 0;
+}
+
+input:focus {
+  outline: rgba(0, 0, 0, 0.5) solid 2px;
+  -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.8);
+}
+
+.m-top-1 {
+  margin-top: 1em;
+}
+
+.mint-wrapper {
+  padding: 30px;
+  text-align: center;
+}
+
+p {
+  margin: 0;
+}
+
+p.small {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #7d7d7d;
+}
+</style>
