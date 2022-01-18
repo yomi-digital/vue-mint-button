@@ -39,7 +39,6 @@
 import Web3 from "web3";
 import Web3Modal, { isMobile } from "web3modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
-import "@/mint-btn-style.css";
 
 export default {
   props: ["ABI", "price", "contract", "infuraId", "explorerUrl"],
