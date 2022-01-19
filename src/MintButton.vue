@@ -41,7 +41,15 @@ import Web3Modal, { isMobile } from "web3modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 
 export default {
-  props: ["ABI", "price", "contract", "infuraId", "explorerUrl"],
+  props: [
+    "ABI",
+    "network",
+    "price",
+    "method",
+    "contract",
+    "infuraId",
+    "explorerUrl",
+  ],
   name: "MintButton",
   data() {
     return {
@@ -52,6 +60,13 @@ export default {
       isMinting: false,
       web3: "",
       pending: "",
+      networks: {
+        ethereum: 1,
+        rinkeby: 4,
+        polygon: 137,
+        mumbai: 80001,
+        ganache: 5777,
+      },
     };
   },
   watch: {
@@ -89,8 +104,8 @@ export default {
       app.web3 = await new Web3(provider);
       // Checking if networkId matches
       const netId = await app.web3.eth.net.getId();
-      if (netId !== 1) {
-        alert("Switch to Ethereum Network!");
+      if (parseInt(netId) !== app.networks[app.network]) {
+        alert("Switch to " + app.network + " network!");
       } else {
         const accounts = await app.web3.eth.getAccounts();
         if (accounts.length > 0) {
@@ -108,12 +123,15 @@ export default {
         app.isMinting = true;
         try {
           const wei = app.web3.utils.toWei(app.total.toString(), "ether");
-          const gasLimit = 100000 + app.amount * 125000;
-          const nftContract = new app.web3.eth.Contract(app.ABI, app.contract, {
-            gasLimit: gasLimit.toString(),
+          const estimated = await nftContract.methods[app.method](
+            app.amount
+          ).estimateGas({
+            from: app.account,
+            value: wei.toString(),
           });
-          await nftContract.methods
-            .safeMint(app.amount, false)
+          const gasLimit = estimated * 1.2;
+          const nftContract = new app.web3.eth.Contract(app.ABI, app.contract);
+          await nftContract.methods[app.method](app.amount)
             .send({
               from: app.account,
               value: wei.toString(),

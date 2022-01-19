@@ -38,7 +38,7 @@ components: {
 ```html
 <template>
 	<div  id="app">
-		<MintButton :ABI="abi" :price="price" :contract="contract" />
+		<MintButton :ABI="abi" :price="price" :network="network" :method="method" :explorerUrl="explorerUrl" :contract="contract" />
 	</div>
 </template>
 ```
@@ -55,7 +55,7 @@ You can use them as you like, via `props` or within `data()`.
 ```html
 <template>
   <div id="app">
-    <MintButton :ABI="abi" :price="price" :contract="contract" />
+    <MintButton :ABI="abi" :price="price" :network="network" :method="method" :explorerUrl="explorerUrl" :contract="contract" />
   </div>
 </template>
 
@@ -91,6 +91,8 @@ export default {
       ],
       price: 0.1,
       contract: "0x2A8555f5cd838356295637b336C90368EA1ED995",
+      network: "ethereum",
+      method: "safeMint"
     };
   },
 };
