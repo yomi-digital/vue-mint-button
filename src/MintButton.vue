@@ -122,16 +122,16 @@ export default {
       if (!app.isMinting) {
         app.isMinting = true;
         try {
-          const wei = app.web3.utils.toWei(app.total.toString(), "ether");
-          const estimated = await nftContract.methods[app.method](
-            app.amount
-          ).estimateGas({
-            from: app.account,
-            value: wei.toString(),
-          });
-          const gasLimit = estimated * 1.2;
           const nftContract = new app.web3.eth.Contract(app.ABI, app.contract);
-          await nftContract.methods[app.method](app.amount)
+          const wei = app.web3.utils.toWei(app.total.toString(), "ether");
+          const estimated = await nftContract.methods[app.method]().estimateGas(
+            {
+              from: app.account,
+              value: wei.toString(),
+            }
+          );
+          const gasLimit = parseInt(estimated * 1.2).toString();
+          await nftContract.methods[app.method]()
             .send({
               from: app.account,
               value: wei.toString(),
