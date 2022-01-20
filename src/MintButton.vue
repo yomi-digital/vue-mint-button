@@ -20,14 +20,14 @@
       </p>
       <p class="m-top-1" v-if="isMinting && pending">
         Your transaction was submitted, waiting for confirmation at:
-        <a
-          v-if="explorerUrl !== undefined"
-          :href="explorerUrl + pending"
-          target="_blank"
-          >{{ pending }}</a
-        >
-        <span v-if="explorerUrl === undefined">{{ pending }}</span>
       </p>
+      <a
+        v-if="explorerUrl !== undefined"
+        :href="explorerUrl + pending"
+        target="_blank"
+        >{{ pending }}</a
+      >
+      <p v-if="explorerUrl === undefined">{{ pending }}</p>
     </div>
     <div v-if="!account">
       <div class="btn mint-btn" @click="connect()">Connect Wallet</div>
