@@ -7,6 +7,16 @@ https://yomi.digital
 
 This component has been developed to facilitate the connection to **Metamask**, the minting of **NFTs** and consequently the transaction. 
 
+Through this component you can choose different networks for minting including:
+
+- Ethereum
+- Rinkeby:
+- Polygon:
+- Mumbai:
+- Ganache
+
+In addition, a link to the transaction txid is provided.
+
 ***ATTENTION***: *This component is only compatible with VueJS projects.*
 
 To use vue-mint-button, just follow this guide
@@ -46,8 +56,11 @@ components: {
 For the correct functioning of vue-mint-button you will need to enter the following data: 
 
  - ABI (smart contract details) 
+ - Network (Ethereum, Rinkeby, Polygon, Mumbai, Ganache)
+ - Method (the minting function)
  - Price (price per NFT) 
- - contract (address of the smart contract)
+ - Contract (address of the smart contract)
+ - Url (txid link)
 
 You can use them as you like, via `props` or within `data()`.
 
