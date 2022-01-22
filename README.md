@@ -16,9 +16,9 @@ This component has been developed to facilitate the connection to **Metamask**, 
 Through this component you can choose different networks for minting including:
 
 - Ethereum
-- Rinkeby:
-- Polygon:
-- Mumbai:
+- Rinkeby
+- Polygon
+- Mumbai
 - Ganache
 
 In addition, a link to the transaction txid is provided.
@@ -54,7 +54,7 @@ components: {
 ```html
 <template>
 	<div  id="app">
-		<MintButton :ABI="abi" :price="price" :network="network" :method="method" :explorerUrl="explorerUrl" :contract="contract" />
+		<MintButton :ABI="abi" :price="price" :network="network" :method="method" :parameters="parameters" :explorerUrl="explorerUrl" :contract="contract" />
 	</div>
 </template>
 ```
@@ -62,8 +62,9 @@ components: {
 For the correct functioning of vue-mint-button you will need to enter the following data: 
 
  - ABI (smart contract details) 
- - Network (Ethereum, Rinkeby, Polygon, Mumbai, Ganache)
+ - Network (ethereum, rinkeby, polygon, mumbai, ganache)
  - Method (the minting function)
+ - Parameters (an array of parameters if needed for the method)
  - Price (price per NFT) 
  - Contract (address of the smart contract)
  - Url (txid link)
@@ -74,7 +75,7 @@ You can use them as you like, via `props` or within `data()`.
 ```html
 <template>
   <div id="app">
-    <MintButton :ABI="abi" :price="price" :network="network" :method="method" :explorerUrl="explorerUrl" :contract="contract" />
+    <MintButton :ABI="abi" :price="price" :network="network" :method="method" :parameters="parameters" :explorerUrl="explorerUrl" :contract="contract" />
   </div>
 </template>
 
