@@ -49,6 +49,7 @@ export default {
     "contract",
     "infuraId",
     "explorerUrl",
+    "parameters"
   ],
   name: "MintButton",
   data() {
@@ -124,7 +125,7 @@ export default {
         try {
           const nftContract = new app.web3.eth.Contract(app.ABI, app.contract);
           const wei = app.web3.utils.toWei(app.total.toString(), "ether");
-          const estimated = await nftContract.methods[app.method]().estimateGas(
+          const estimated = await nftContract.methods[app.method].apply(null, app.parameters).estimateGas(
             {
               from: app.account,
               value: wei.toString(),
