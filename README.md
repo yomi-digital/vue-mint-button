@@ -1,7 +1,7 @@
 # vue-mint-button
 Vue component for web3 connection and minting NFTs, developed by YOMI
 
-![YOMI](https://yomi.digital/logo_dark_2.png)
+![YOMI](https://github.com/yomi-digital/logo/raw/master/logo_light_2.png)
 
 https://yomi.digital
 \
