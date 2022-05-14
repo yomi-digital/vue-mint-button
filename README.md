@@ -112,10 +112,12 @@ export default {
       price: 0.1,
       contract: "0x2A8555f5cd838356295637b336C90368EA1ED995",
       network: "ethereum",
-      method: "safeMint"
+      method: "safeMint",
+      parameters: []
     };
   },
 };
 </script>
 ```
 
+A live example can be found in `demo` folder.
