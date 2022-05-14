@@ -37,7 +37,7 @@
 
 <script>
 import Web3 from "web3";
-import Web3Modal, { isMobile } from "web3modal";
+import Web3Modal from "web3modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 
 export default {
@@ -141,6 +141,9 @@ export default {
             .on("transactionHash", (pending) => {
               app.pending = pending;
             });
+            app.isMinting = false
+            app.pending = ""
+            alert(app.method + " ran successfully!")
         } catch (e) {
           alert(e.message);
           app.isMinting = false;

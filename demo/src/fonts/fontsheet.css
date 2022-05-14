@@ -1,0 +1,55 @@
+@font-face {
+    font-family: "Obviously Medi";
+    src: url("Obviously-Medi.woff2") format("woff2"), url("Obviously-Medi.woff") format("woff");
+    font-weight: normal;
+    font-style: medium;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Obviously";
+    src: url("Obviously-ReguItalic.woff2") format("woff2"), url("Obviously-ReguItalic.woff") format("woff");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Obviously Semi";
+    src: url("Obviously-Semi.woff2") format("woff2"), url("Obviously-Semi.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Obviously";
+    src: url("Obviously-Regu.woff2") format("woff2"), url("Obviously-Regu.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Obviously Lght';
+    src: url('Obviously-Lght.woff2') format('woff2'), url('Obviously-Lght.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Obviously Wide';
+    src: url('Obviously-Wide.woff2') format('woff2'), url('Obviously-Wide.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Obviously Wide Medi";
+    src: url("Obviously-WideMedi.woff2") format("woff2"), url("Obviously-WideMedi.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}

@@ -1,0 +1,263 @@
+html,
+body {
+  background-color: #050505;
+  color: white;
+  font-family: "Obviously";
+  overflow-x: hidden;
+}
+
+// FONT
+h1 {
+  font-family: "Obviously Medi";
+  color: white;
+}
+
+h3 {
+  color: white;
+}
+
+p {
+  font-family: "Obviously Lght";
+  color: white;
+}
+
+.bold {
+  font-family: "Obviously Medi";
+}
+
+.green {
+  color: #41fe98;
+}
+
+i {
+  color: white;
+  font-size: 2rem;
+  &:hover {
+    color: #41fe98;
+    transition: all 0.3s;
+    transform: scale(
+      1.2
+    ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+}
+
+// END FONT
+
+.bg-wrapper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 40vh;
+  .bg-vec {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    background-image: url("/assets/img/header_website.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    .gradient {
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.8995973389355743) 25%,
+        rgba(0, 0, 0, 0.03405112044817926) 100%
+      );
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      z-index: 9;
+    }
+  }
+}
+.gap {
+  width: 100%;
+  height: 3vh;
+}
+
+.main-section {
+  .github-btn {
+    &:hover {
+      transition: all 0.3s;
+      transform: scale(
+        1.2
+      ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    }
+  }
+}
+
+.mint-wrapper {
+  position: relative;
+  z-index: 10;
+  .btn {
+    display: inline-block;
+    font-weight: 900;
+    line-height: 1.5;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  .btn:hover {
+    background-color: #41fe98;
+    color: #050505;
+  }
+  a {
+    color: #41fe98;
+    text-decoration: underline;
+  }
+}
+
+.social {
+  position: relative;
+  z-index: 10;
+}
+
+// LOADER
+
+.loader {
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  background-color: #05001b;
+  z-index: 9999;
+}
+.animated-squares {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  background-color: black;
+  margin: 0;
+
+  .square {
+    height: 600px;
+    width: 600px;
+    position: absolute;
+    border: 2px solid white;
+  }
+}
+
+.start-rotation {
+  .square-one {
+    animation: spin 2s linear 5;
+    animation-delay: 2s;
+  }
+  .square-two {
+    animation: spin 3s linear 5;
+    animation-delay: 2s;
+  }
+  .square-three {
+    animation: spin 4s linear 5;
+    animation-delay: 2s;
+  }
+  .square-four {
+    animation: spin 5s linear 5;
+    animation-delay: 2s;
+  }
+  .square-five {
+    animation: spin 2s linear 5;
+    animation-delay: 1s;
+  }
+  .square-six {
+    animation: spin 3s linear 5;
+    animation-delay: 1s;
+  }
+  .square-seven {
+    animation: spin 4s linear 5;
+    animation-delay: 1s;
+  }
+  .square-eight {
+    animation: spin 5s linear 5;
+    animation-delay: 1s;
+  }
+  .square-nine {
+    animation: spin 2s linear 5;
+  }
+  .square-ten {
+    animation: spin 3s linear 5;
+  }
+  .square-eleven {
+    animation: spin 4s linear 5;
+  }
+  .square-twelve {
+    animation: spin 5s linear 5;
+  }
+  .square-thirteen {
+    animation: spin 2s linear 5;
+    animation-delay: 3s;
+  }
+  .square-fourteen {
+    animation: spin 3s linear 5;
+    animation-delay: 3s;
+  }
+  .square-fifteen {
+    animation: spin 4s linear 5;
+    animation-delay: 3s;
+  }
+  .square-sixteen {
+    animation: spin 5s linear 5;
+    animation-delay: 3s;
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.scale-out-center {
+  -webkit-animation: scale-out-center 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    both;
+  animation: scale-out-center 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+@-webkit-keyframes scale-out-center {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-out-center {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+}
