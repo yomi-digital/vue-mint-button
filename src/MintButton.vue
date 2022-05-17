@@ -132,7 +132,7 @@ export default {
             }
           );
           const gasLimit = parseInt(estimated * 1.2).toString();
-          await nftContract.methods[app.method]()
+          await nftContract.methods[app.method].apply(null, app.parameters)
             .send({
               from: app.account,
               value: wei.toString(),
